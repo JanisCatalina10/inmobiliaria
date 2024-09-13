@@ -128,7 +128,7 @@ const propertiesForRent = [
   ];
 
   //RENDERIZAR PROPIEDADES
-  function renderProperties(properties, containerId) {
+  function renderProperties(properties, containerId, limit) {
     console.log("Renderizando propiedades para:", containerId);
     const container = document.getElementById(containerId);
     if (!container) {
@@ -137,43 +137,52 @@ const propertiesForRent = [
     }
     container.innerHTML = '';
 
-    for (const property of properties) {
+    const propertiesToShow = limit ? properties.slice(0, limit) : properties;
+
+    for (const property of propertiesToShow) {
       console.log("Procesando propiedad:", property.nombre);
       const propertyDiv = document.createElement('div');
       propertyDiv.classList.add('property');
 
-      const smokeColor = property.smoke ? 'green' : 'red';
-      const petsColor = property.pets ? 'green' : 'red';
-      const smokeIcon = property.smoke ? 'fa-smoking' : 'fa-smoking-ban';
-      const petsIcon = property.pets ? 'fa-paw' : 'fa-ban';
-      const smokeText = property.smoke ? 'Permite fumar' : 'No permite fumar';
-      const petsText = property.pets ? 'Permite mascotas' : 'No permite mascotas';
-
       //CONDICION PARA ALERT
-    if (!property.smoke) {
-      alert(`La propiedad ${property.nombre} no permite fumar.`);
-    }
-    if (!property.pets) {
-      alert(`La propiedad ${property.nombre} no permite mascotas.`);
-    }
+      if (window.location.pathname.includes('propiedades_venta.html') || window.location.pathname.includes('propiedades_alquiler.html')) {
+        if (!property.smoke) {
+          alert(`La propiedad ${property.nombre} no permite fumar.`);
+        }
+        if (!property.pets) {
+          alert(`La propiedad ${property.nombre} no permite mascotas.`);
+        }
+      }
 
       propertyDiv.innerHTML += `
-        <h2>${property.nombre}</h2>
         <img src="${property.src}" alt="${property.nombre}" />
+        <h2>${property.nombre}</h2>
         <p><strong>${property.descripcion}</strong></p>
         <p><strong>Ubicación:</strong> ${property.ubicacion}</p>
         <p><strong>Habitaciones:</strong> ${property.habitaciones}</p>
         <p><strong>Costo: </strong>${property.costo}</p>
-        <p style="color: ${smokeColor};">
-        <i class="fas ${smokeIcon}"></i> ${smokeText}
+        <p style="color: ${property.smoke ? 'green' : 'red'};">
+        <i class="fas ${property.smoke ? 'fa-smoking' : 'fa-smoking-ban'}"></i> ${property.smoke ? 'Permite fumar' : 'No permite fumar'}
       </p>
-      <p style="color: ${petsColor};">
-        <i class="fas ${petsIcon}"></i> ${petsText}
+      <p style="color: ${property.pets ? 'green' : 'red'};">
+        <i class="fas ${property.pets ? 'fa-paw' : 'fa-ban'}"></i> ${property.pets ? 'Permite mascotas' : 'No permite mascotas'}
       </p>
       `;
       container.appendChild(propertyDiv);
     }
     
   }
- 
-    
+
+    // MOSTRAR PROPIEDADES
+    if (window.location.pathname.includes('index.html')) {
+      renderProperties(propertiesForSale, 'venta', 3);
+      renderProperties(propertiesForRent, 'alquiler', 3);
+    } else if (window.location.pathname.includes('propiedades_venta.html')) {
+      renderProperties(propertiesForSale, 'sales-properties');
+    } else if (window.location.pathname.includes('propiedades_alquiler.html')) {
+      renderProperties(propertiesForRent, 'rent-properties');
+    }
+
+    function navigateTo(url) {
+      window.location.href = url;
+    }

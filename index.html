@@ -49,18 +49,21 @@
       <h1 class="text-white">Encuentra tu nueva propiedad</h1>
     </main>
     <div class="container mt-5">
+
       <!-- Propiedades en venta -->
-      <section id="venta">
-        <h2>Propiedades en venta</h2>
-        <a href="#" class="btn btn-dark"
-          >Ver todas las propiedades en venta</a
-        >
+      <section >
+        <div id="venta" class="cards"></div>
+          <h2>Propiedades en venta</h2>
+          <a href="#" class="btn btn-dark" onclick="navigateTo('propiedades_venta.html')"
+            >Ver todas las propiedades en venta</a
+          >
       </section>
       <hr />
       <!-- Propiedades en alquiler -->
-      <section id="alquiler" class="mb-5">
+      <section>
+        <div  id="alquiler" class="cards"></div>
         <h2>Propiedades en alquiler</h2>
-        <a href="#" class="btn btn-dark"
+        <a href="#" class="btn btn-dark" onclick="navigateTo('propiedades_alquiler.html')"
           >Ver todas las propiedades en alquiler</a
         >
       </section>
