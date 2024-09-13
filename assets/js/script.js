@@ -7,7 +7,7 @@ const propertiesForSale = [
       descripcion: 'Chalet con jardín grande y piscina privada.',
       ubicacion: 'Zona Residencial, Ciudad X',
       habitaciones: 5,
-      costo: 450000000, 
+      costo: 4500, 
       smoke: true,
       pets: true
     },
@@ -17,7 +17,7 @@ const propertiesForSale = [
       descripcion: 'Mansión con vistas panorámicas y múltiples comodidades.',
       ubicacion: 'Zona Exclusiva, Ciudad B',
       habitaciones: 6,
-      costo: 900000000, 
+      costo: 9000, 
       smoke: false,
       pets: true
     },
@@ -27,7 +27,7 @@ const propertiesForSale = [
         descripcion: 'Loft con diseño minimalista y grandes ventanales.',
         ubicacion: 'Zona Urbana, Ciudad A',
         habitaciones: 1,
-        costo: 180000000, 
+        costo: 1800, 
         smoke: false,
         pets: true
       },
@@ -37,7 +37,7 @@ const propertiesForSale = [
       descripcion: 'Piso con acabados modernos en el corazón de la ciudad.',
       ubicacion: 'Centro Histórico, Ciudad L',
       habitaciones: 3,
-      costo: 280000000, 
+      costo: 2800, 
       smoke: false,
       pets: true
     },
@@ -47,7 +47,7 @@ const propertiesForSale = [
         descripcion: 'Hermosa casa de campo rodeada de naturaleza.',
         ubicacion: 'Rural, Ciudad Z',
         habitaciones: 4,
-        costo: 350000000, 
+        costo: 3500, 
         smoke: true,
         pets: true
       },
@@ -57,7 +57,7 @@ const propertiesForSale = [
       descripcion: 'Casa con acceso directo a la playa y vistas al mar.',
       ubicacion: 'Playa Dorada, Ciudad M',
       habitaciones: 4,
-      costo: 500000000, 
+      costo: 5000, 
       smoke: true,
       pets: true
     },
@@ -81,7 +81,7 @@ const propertiesForRent = [
       descripcion: 'Ático con vistas panorámicas y acabados de alta gama.',
       ubicacion: 'Zona Alta, Ciudad O',
       habitaciones: 2,
-      costo: 450000000, 
+      costo: 4500, 
       smoke: false,
       pets: true
    },
