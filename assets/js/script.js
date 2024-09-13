@@ -131,6 +131,7 @@ const propertiesForRent = [
   function renderProperties(properties, containerId, limit) {
     console.log("Renderizando propiedades para:", containerId);
     const container = document.getElementById(containerId);
+    //CONDICION PARA QUE SE CARGUE EL SCRIPT EN TODAS LAS PAGINAS
     if (!container) {
       console.error(`Contenedor con ID ${containerId} no encontrado`);
       return;
@@ -183,6 +184,7 @@ const propertiesForRent = [
       renderProperties(propertiesForRent, 'rent-properties');
     }
 
+    //FUNCION PARA REDIRIGIR A SUS RESPECTIVAS PAGINAS
     function navigateTo(url) {
       window.location.href = url;
     }
