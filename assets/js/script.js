@@ -131,6 +131,7 @@ const propertiesForRent = [
   function renderProperties(properties, containerId, limit) {
     console.log("Renderizando propiedades para:", containerId);
     const container = document.getElementById(containerId);
+    
     //CONDICION PARA QUE SE CARGUE EL SCRIPT EN TODAS LAS PAGINAS
     if (!container) {
       console.error(`Contenedor con ID ${containerId} no encontrado`);
