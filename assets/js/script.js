@@ -145,16 +145,6 @@ const propertiesForRent = [
       const propertyDiv = document.createElement('div');
       propertyDiv.classList.add('property');
 
-      //CONDICION PARA ALERT
-      if (window.location.pathname.includes('propiedades_venta.html') || window.location.pathname.includes('propiedades_alquiler.html')) {
-        if (!property.smoke) {
-          alert(`La propiedad ${property.nombre} no permite fumar.`);
-        }
-        if (!property.pets) {
-          alert(`La propiedad ${property.nombre} no permite mascotas.`);
-        }
-      }
-
       propertyDiv.innerHTML += `
         <img src="${property.src}" alt="${property.nombre}" />
         <h2>${property.nombre}</h2>
